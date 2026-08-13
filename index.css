@@ -1,0 +1,649 @@
+body{
+margin: 0;
+padding: 0;
+height: 100vh;
+width:100vw;
+}
+
+.weatherbasic{
+
+display: flex;
+flex-direction: row;
+gap:5px;
+
+
+}
+.weathergeneralcontrol{
+margin-left: 10px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap:15px;
+
+}
+.weathergeneral{
+
+display: flex;
+flex-direction: column;
+gap:10px;
+
+}
+
+
+
+#Imsak{
+font-size: 28px;
+color: white;
+}
+
+#Gunes{
+font-size: 28px;
+color: white;
+}
+
+#Ogle{
+font-size: 28px;
+color: white;
+}
+
+
+#Ikindi{
+font-size: 28px;
+color: white;
+}
+
+#Aksam{
+font-size: 28px;
+color: white;
+}
+
+#Yatsi{
+font-size: 28px;
+color: white;
+}
+#pray{
+font-size: 30px;
+color: white;
+
+}
+#Wind{
+font-size: 22px;
+margin: 0;
+padding: 0;
+color: white;
+}
+
+#Pressure{
+margin: 0;
+padding: 0;
+font-size: 22px;
+color: white;
+}
+#Temperature{
+
+font-size: 24px;
+color: white;
+}
+.vr1{
+box-sizing: border-box;
+width: 1px;
+border: 1px solid rgb(104, 242, 255);
+ height: 100vh;
+padding: 0;
+margin:0;
+}
+.vr2{
+box-sizing: border-box;
+width: 1px;
+border: 1px solid rgb(104, 242, 255);
+ height: 100vh;
+padding: 0;
+margin:0;
+}
+
+.vr3{
+box-sizing: border-box;
+width: 1px;
+border: 1px solid rgb(104, 242, 255);
+ height: 100vh;
+padding: 0;
+margin:0;
+}
+.vr4{
+box-sizing: border-box;
+width: 1px;
+border: 1px solid rgb(104, 242, 255);
+ height: 100vh;
+padding: 0;
+margin:0;
+}
+.vr5{
+box-sizing: border-box;
+width: 1px;
+border: 1px solid rgb(104, 242, 255);
+ height: 100vh;
+padding: 0;
+margin:0;
+}
+.rowline{
+   
+box-sizing: border-box;
+width: 20vw;
+border: 1px solid rgb(104, 242, 255);
+ height: 1px;
+padding: 0;
+margin:0;
+}
+
+#currentTime{
+font-size: 56px;
+color: white;
+margin:0;
+padding: 30px;
+
+
+}
+.column1{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 15vw;
+}
+.column1ctrl{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:flex-start;
+margin-right: 10px;
+
+
+}
+.vr1ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:black;
+
+
+
+}
+
+.column2ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 15vw;
+}
+
+.vr2ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:black;
+
+
+
+}
+.column3{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 30vw;
+gap:30px;
+}
+
+.column3ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+}
+
+.vr3ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:black;
+
+}
+
+.column4{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 20vw;
+}
+.column4ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.vr4ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:linen;
+background-color: black;
+
+
+
+}
+.column5{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+background-color:black;
+width:20vw;
+ height: 100vh;
+}
+
+
+
+
+
+
+
+
+.mainctrl{
+
+display: flex;
+flex-direction: row;
+
+
+box-sizing: border-box;
+
+}
+#lastupdate{
+
+font-size: 26px;
+margin: 0;
+color: black;
+background-color: white;
+
+}
+#gram{
+
+font-size: 26px; 
+margin: 0; 
+color: black;
+background-color: white;
+
+
+}
+#ons{
+
+font-size: 26px;  
+margin: 0;
+color: black;
+background-color: white;
+
+}
+#ceyrek{
+
+font-size: 26px;  
+margin: 0;
+color: black;;
+background-color: white;
+
+}
+#yarim{
+
+font-size: 26px;  
+margin: 0;
+color: black;
+background-color: white;
+
+}
+#tam{
+
+font-size: 26px;  
+margin: 0;
+color: black;
+background-color: white;
+}
+#cumhuriyet{
+
+font-size: 26px;  
+margin: 0;
+color: black;
+background-color: white;
+
+}
+#usdtry{
+
+font-size: 26px;
+margin: 0;
+color: black;
+background-color: white;
+
+}
+#usdeur{
+
+font-size: 26px;
+margin: 0;
+color: black;
+background-color: white;
+
+
+}
+.altinpricetitle  {
+font-size: 40px;
+margin: 0;
+color: black;
+background-color: white;
+
+}
+
+
+#eczane1{
+font-size: 28px;
+margin-left: 10px;
+
+}
+#eczane2{
+font-size: 30px;
+margin-left: 10px;
+    
+}
+#eczane1adres{
+
+font-size: 30px;
+    margin-left: 10px;
+}
+#eczane2adres{
+
+font-size: 30px;
+    margin-left: 10px;
+}
+#column4title{
+margin-left: 10px;
+color:white;
+}
+
+
+
+
+.doviz{
+display: flex ;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap:40px;
+
+}
+.vr1ctrl:hover {
+background-color:rgba(29, 31, 29, 0.8);
+
+
+
+}
+.vr2ctrl:hover {
+background-color:rgba(29, 31, 29, 0.8);
+
+
+
+}
+.vr3ctrl:hover {
+background-color:rgba(29, 31, 29, 0.8);
+
+
+
+}
+
+.vr4ctrl:hover {
+background-color:rgba(29, 31, 29, 0.8);
+
+
+
+}
+.locationcity{
+
+width:15vw;
+height:5vh;
+border: 2px solid black;
+margin: 0;
+}
+.locationdistrict{
+
+width:15vw;
+height:5vh;
+border: 2px solid black;
+margin: 0;
+}
+.select{
+
+display: flex ;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+gap:10px;
+
+}
+.submit{
+
+width:15vw;
+height:4vh;
+border: 2px solid black;
+margin: 0;
+}
+.not{
+font-size: 20px;
+margin: 0; 
+text-align: center;
+color: white;
+}
+#location{
+
+font-size: 18px;
+margin: 0; 
+text-align: center;
+color: white;
+
+}
+.yapimci{
+
+font-size: 24px;
+margin: 0; 
+text-align: center;
+color: white;
+
+
+}
+.github{
+
+font-size: 24px;
+margin: 0; 
+text-align: center;
+color: white;
+
+
+}
+.pharmacy{
+width: 100%;
+height:50vh;
+border: none;
+}
+
+@media screen and (max-width: 768px) {
+
+.mainctrl{
+
+display: flex;
+flex-direction: column;
+height: 100vh;
+width:100vw;
+
+box-sizing: border-box;
+
+}
+.column1{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100vw;
+
+}
+.column1ctrl{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:flex-start;
+margin-right: 10px;
+
+
+}
+.vr1ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:black;
+order: 5;
+
+
+}
+
+.column2ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100vw;
+
+}
+
+.vr2ctrl{
+display: none;
+
+}
+.column3{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100vw;
+gap:30px;
+
+}
+
+.column3ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+}
+
+.vr3ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:black;
+order: 3;
+}
+
+.column4{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100vw;
+
+}
+.column4ctrl{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.vr4ctrl{
+display: flex;
+flex-direction: row;
+transition: all 0.5s ease-in-out;
+background-color:linen;
+background-color: black;
+order: 2;
+
+
+}
+.column5{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+background-color:black;
+width: 100vw;
+height: 40vh;
+order: 1;
+
+}
+.locationcity{
+
+width:100vw;
+height:5vh;
+border: 2px solid black;
+margin: 0;
+box-sizing: border-box;
+}
+.locationdistrict{
+
+width:100vw;
+height:5vh;
+border: 2px solid black;
+margin: 0;
+box-sizing: border-box;
+}
+.submit{
+
+width:80vw;
+height:4vh;
+border: 2px solid black;
+margin: 0;
+}
+.not{
+font-size: 20px;
+margin: 0; 
+text-align: center;
+color: white;
+}
+
+.vr1{
+display: none;
+}
+.vr2{
+display: none;
+}
+
+.vr3{
+display: none;
+}
+.vr4{
+display: none;
+}
+.vr5{
+display: none;
+}
+
+.pharmacy{
+width: 100%;
+height:30vh;
+border: none;
+}
+
+}
+
