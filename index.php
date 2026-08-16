@@ -9,7 +9,9 @@
   <meta name="keywords" content="lifedash, altın fiyatları, nöbetçi eczaneler, dashboard, canlı veri">
   <meta name="author" content="Musa Eymen Şahin">
 
+   <link rel="canonical" href="https://lifedash.site.je" />
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/gif" href="/favicon.gif">
 </head>
 <body>
 
@@ -1530,13 +1532,108 @@ if (locationcity && locationdistrict) {
 
    
 
+ <script>
+     // 3. Konumu al ve veriyi KESİNLİKLE konum geldikten sonra (içeride) çek
+       if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(position => {
+               const enlem = position.coords.latitude;
+               const boylam = position.coords.longitude;
+
+               console.log("Kullanıcının koordinatları:", enlem, boylam);
+
+
+
+
+       fetch(`https://api.open-meteo.com/v1/forecast?latitude=${enlem}&longitude=${boylam}&current=temperature_2m,wind_speed_10m&current=weather_code&current=surface_pressure&current=is_day`)
+            .then(response => response.json()) // JSON'a çevir
+            .then(data => {
+                // Bugünün vakitlerini alıyoruz
+                const current = data.current;
+                const temperature = current.temperature_2m;
+                const wind = current.wind_speed_10m;
+                const pressure = current.surface_pressure;
+               const weathercode = current.weather_code;
+ 
+             console.log(data);
+
+
+function getWeatherIcon(weathercode) {
+    const is_day = current.is_day;
+  const timeSuffix = (is_day === 1) ? 'd' : 'n'; 
+
+  if (weathercode === 0) return `http://openweathermap.org/img/wn/01${timeSuffix}@2x.png`; // Açık gökyüzü
+  if (weathercode === 1) return `http://openweathermap.org/img/wn/01${timeSuffix}@2x.png`; // Az bulutlu
+  if (weathercode === 2) return `http://openweathermap.org/img/wn/02${timeSuffix}@2x.png`; // Parçalı bulutlu
+  if (weathercode === 3) return `http://openweathermap.org/img/wn/03${timeSuffix}@2x.png`; // Çok bulutlu / Kapalı
+  
+  if (weathercode === 45) return `http://openweathermap.org/img/wn/50${timeSuffix}@2x.png`; // Sisli
+  if (weathercode === 48) return `http://openweathermap.org/img/wn/50${timeSuffix}@2x.png`; // Kırağı oluşturan sis
+  
+  if (weathercode === 51) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Hafif çisenti
+  if (weathercode === 52) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Orta çisenti
+  if (weathercode === 53) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Orta çisenti
+  if (weathercode === 54) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Yoğun çisenti
+  if (weathercode === 55) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Yoğun çisenti
+  if (weathercode === 56) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Hafif dondurucu çisenti
+  if (weathercode === 57) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Yoğun dondurucu çisenti
+  
+  if (weathercode === 61) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Hafif yağmur
+  if (weathercode === 62) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Orta yağmur
+  if (weathercode === 63) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Orta şiddetli yağmur
+  if (weathercode === 64) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Şiddetli yağmur
+  if (weathercode === 65) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Şiddetli yağmur
+  if (weathercode === 66) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Hafif dondurucu yağmur
+  if (weathercode === 67) return `http://openweathermap.org/img/wn/10${timeSuffix}@2x.png`; // Şiddetli dondurucu yağmur
+  
+  if (weathercode === 71) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Hafif kar yağışı
+  if (weathercode === 72) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Orta kar yağışı
+  if (weathercode === 73) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Orta şiddetli kar yağışı
+  if (weathercode === 74) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Yoğun kar yağışı
+  if (weathercode === 75) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Yoğun kar yağışı
+  if (weathercode === 76) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Kar tanecikleri
+  if (weathercode === 77) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Kar tanecikleri
+  
+  if (weathercode === 80) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Hafif sağanak yağmur
+  if (weathercode === 81) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Orta sağanak yağmur
+  if (weathercode === 82) return `http://openweathermap.org/img/wn/09${timeSuffix}@2x.png`; // Şiddetli sağanak yağmur
+  
+  if (weathercode === 85) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Hafif kar sağanağı
+  if (weathercode === 86) return `http://openweathermap.org/img/wn/13${timeSuffix}@2x.png`; // Yoğun kar sağanağı
+  
+  if (weathercode === 95) return `http://openweathermap.org/img/wn/11${timeSuffix}@2x.png`; // Hafif veya orta gök gürültülü fırtına
+  if (weathercode === 96) return `http://openweathermap.org/img/wn/11${timeSuffix}@2x.png`; // Hafif dolu yağışlı fırtına
+  if (weathercode === 97) return `http://openweathermap.org/img/wn/11${timeSuffix}@2x.png`; // Fırtına
+  if (weathercode === 98) return `http://openweathermap.org/img/wn/11${timeSuffix}@2x.png`; // Fırtına
+  if (weathercode === 99) return `http://openweathermap.org/img/wn/11${timeSuffix}@2x.png`; // Şiddetli dolu yağışlı fırtına
+
+  return ""; // Tanımlı olmayan diğer tüm kodlar için varsayılan
+}
+
+
+document.getElementById('WeatherIcon').src = getWeatherIcon(weathercode);
+document.getElementById('Temperature').innerText =  temperature;
+document.getElementById('Wind').innerText = "Rüzgar: " + wind;
+document.getElementById('Pressure').innerText = "Basınç: " + pressure ;
+            })
+            .catch(error => {
+                console.log("Bir hata oluştu: ", error);
+                document.getElementById('Temperature').innerText = "Veri çekilemedi.";
+ 
+            });
+                       }, error => {
+               console.log("Konum izni reddedildi veya alınamadı:", error);
+               document.getElementById('Imsak').innerText = "Konum alınamadı.";
+           });
+       } else {
+           console.log("Tarayıcınız konum desteklemiyor.");
+       }
+    </script>
 
 
 
 
 
-
-    <script>
+   <!-- <script>
        fetch("api-proxy.php?service=weather")
             .then(response => response.json()) // JSON'a çevir
             .then(data => {
@@ -1564,7 +1661,7 @@ document.getElementById('WeatherIcon').src = url ;
                 document.getElementById('Pressure').innerText = "Veri çekilemedi.";
             });
     </script>
-
+-->
 
 
 
