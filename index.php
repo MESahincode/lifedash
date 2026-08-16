@@ -1533,32 +1533,9 @@ if (locationcity && locationdistrict) {
    
 
  <script>
-     // 3. Konumu al ve veriyi KESİNLİKLE konum geldikten sonra (içeride) çek
-       if (navigator.geolocation) {
-           navigator.geolocation.getCurrentPosition(position => {
-               const enlem = position.coords.latitude;
-               const boylam = position.coords.longitude;
 
-               console.log("Kullanıcının koordinatları:", enlem, boylam);
-
-
-
-
-       fetch(`https://api.open-meteo.com/v1/forecast?latitude=${enlem}&longitude=${boylam}&current=temperature_2m,wind_speed_10m&current=weather_code&current=surface_pressure&current=is_day`)
-            .then(response => response.json()) // JSON'a çevir
-            .then(data => {
-                // Bugünün vakitlerini alıyoruz
-                const current = data.current;
-                const temperature = current.temperature_2m;
-                const wind = current.wind_speed_10m;
-                const pressure = current.surface_pressure;
-               const weathercode = current.weather_code;
- 
-             console.log(data);
-
-
-function getWeatherIcon(weathercode) {
-    const is_day = current.is_day;
+function getWeatherIcon(weathercode, is_day) {
+    
   const timeSuffix = (is_day === 1) ? 'd' : 'n'; 
 
   if (weathercode === 0) return `http://openweathermap.org/img/wn/01${timeSuffix}@2x.png`; // Açık gökyüzü
@@ -1609,8 +1586,34 @@ function getWeatherIcon(weathercode) {
   return ""; // Tanımlı olmayan diğer tüm kodlar için varsayılan
 }
 
+     // 3. Konumu al ve veriyi KESİNLİKLE konum geldikten sonra (içeride) çek
+       if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(position => {
+               const enlem = position.coords.latitude;
+               const boylam = position.coords.longitude;
 
-document.getElementById('WeatherIcon').src = getWeatherIcon(weathercode);
+               console.log("Kullanıcının koordinatları:", enlem, boylam);
+
+
+
+
+       fetch(`https://api.open-meteo.com/v1/forecast?latitude=${enlem}&longitude=${boylam}&current=temperature_2m,wind_speed_10m,weather_code,surface_pressure,is_day`)
+            .then(response => response.json()) // JSON'a çevir
+            .then(data => {
+                // Bugünün vakitlerini alıyoruz
+                const current = data.current;
+                const temperature = current.temperature_2m;
+                const wind = current.wind_speed_10m;
+                const pressure = current.surface_pressure;
+               const weathercode = current.weather_code;
+ const is_day = current.is_day; // Buradan alınıyor
+             console.log(data);
+
+
+
+
+
+document.getElementById('WeatherIcon').src = getWeatherIcon(weathercode, is_day);
 document.getElementById('Temperature').innerText =  temperature;
 document.getElementById('Wind').innerText = "Rüzgar: " + wind;
 document.getElementById('Pressure').innerText = "Basınç: " + pressure ;
