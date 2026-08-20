@@ -21,7 +21,6 @@
 
 
 
-<div class="vr1ctrl">
 <div class="column1ctrl">
 <div class="column1">
 
@@ -72,41 +71,30 @@
 
 
 </div> <!-- column1 öğeleri hizalamak için vr1 içine dahil değil -->
-</div ><!-- column1ctrl vr1 içine dahil değil tüm yönetim -->
 
-
-
-<div class="vr1"></div>
-
-</div ><!-- vr1ctrl vr1 içine dahil tüm yönetim -->
+</div> <!-- column1ctrl öğeleri hizalamak için vr1 içine dahil değil -->
 
 
 
 
 
 
-<div class="vr2ctrl">
-<div class="column2ctrl">
+
+
+
+
+<div class="column2">
 
 
 <h1 id="currentTime"></h1>
 
 
 
-</div> <!-- column2ctrl tüm yönetim vr2 içine dahil değil -->
-<!-- Burada column2 kullanmadık çünkü sadece 1 öğemiz var. Öğeleri hizalamak için en az 2 öğe gereklidir.-->
-
-
-<div class="vr2"></div>
-
-</div ><!-- vr2ctrl vr2 içine dahil tüm yönetim -->
+</div> 
 
 
 
 
-
-<div class="vr3ctrl">
-<div class="column3ctrl">
 <div class="column3">
 
 <h1 class="altinpricetitle">Altın Fiyatları</h1>
@@ -126,18 +114,10 @@
 </div><!-- Döviz  -->
 
 </div> <!-- column3 öğeleri hizalamak için vr1 içine dahil değil -->
-</div> <!-- column3ctrl tüm yönetim vr2 içine dahil değil -->
 
 
 
-<div class="vr3"></div>
-
-</div ><!-- vr3ctrl vr3 içine dahil tüm yönetim -->
-
-
-
-<div class="vr4ctrl">
-  <div class="column4ctrl"> 
+<div class="column4ctrl">
 <div class="column4">
 
 
@@ -153,13 +133,7 @@
 
 
 </div> <!-- column4 öğeleri hizalamak için vr1 içine dahil değil -->
- </div> <!--  column4ctrl tüm yönetim vr2 içine dahil değil -->
-
-
-
-<div class="vr4"></div>
-
-</div ><!-- vr4ctrl vr4 içine dahil tüm yönetim -->
+</div>
 
 
 
@@ -169,8 +143,7 @@
 
 
 
- <!-- <div class="vr5ctrl"> -->
- <!--  <div class="column5ctrl"> -->
+
 <div class="column5">
 
 
@@ -189,15 +162,8 @@
 <p class="not">İl ve ilçe adlarının sadece baş harfleri büyük yazılmalı.</p><br><br>
 
 <p class="yapimci">Yapımcı:Musa Eymen Şahin</p><br>
-<p class="github">MESahincode</p>
+<p class="github"><a href="https://github.com/MESahincode" target="blank">MESahincode</a></p>
 </div> <!-- column5 öğeleri hizalamak için vr1 içine dahil değil -->
-<!-- </div> --><!-- column5ctrl tüm yönetim vr2 içine dahil değil -->
-
-
-
- <!-- <div class="vr5"></div> -->
-
-<!-- </div > vr5ctrl vr5 içine dahil tüm yönetim -->
 
 
 </div ><!-- mainctrl tüm columnları yan yana getirmek için flex-direction:row; ile -->
@@ -1515,7 +1481,7 @@ if (locationcity && locationdistrict) {
                 const kur = data.result;
                 const lastupdate = data.result.lastupdate;
                 const usdtry = kur.data[47].rate; 
-                const usdeur = kur.data[47].rate; 
+                const usdeur = kur.data[12].rate; 
                
 
                 document.getElementById('usdtry').innerHTML = "<strong>USD/TRY: </strong>" + usdtry ;
